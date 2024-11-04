@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
+    "build": "tailwindcss -i ./public/css/styles.css -o ./public/css/output.css",
     "build:css": "tailwindcss -i ./public/css/styles.css -o ./public/css/output.css --watch",
     "dev": "concurrently \"npm run build:css\" \"npm run start\"",
     "test": "echo \"Error: no test specified\" && exit 1"
