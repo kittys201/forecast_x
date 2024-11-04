@@ -41,19 +41,29 @@ function displayWeather(data) {
     const forecastContainer = document.getElementById('forecastContainer');
     forecastContainer.innerHTML = '';
 
-    // Get one forecast per day (every 8th item as data is in 3-hour intervals)
+    // Get one forecast per day
     const threeDayForecast = data.forecast.list.filter((item, index) => index % 8 === 0).slice(0, 3);
 
     threeDayForecast.forEach(day => {
         const date = new Date(day.dt * 1000);
         const forecastItem = document.createElement('div');
-        forecastItem.className = 'forecast-item';
+        forecastItem.className = 'bg-white rounded-lg p-4 shadow-md text-center';
         
         forecastItem.innerHTML = `
-            <h4>${date.toLocaleDateString('en-US', { weekday: 'long' })}</h4>
-            <img src="http://openweathermap.org/img/wn/${day.weather[0].icon}.png" alt="weather icon">
-            <p>${Math.round(day.main.temp)}°C</p>
-            <p>${day.weather[0].description}</p>
+            <h4 class="font-semibold text-gray-800 mb-2">
+                ${date.toLocaleDateString('en-US', { weekday: 'long' })}
+            </h4>
+            <img 
+                src="http://openweathermap.org/img/wn/${day.weather[0].icon}.png" 
+                alt="weather icon"
+                class="mx-auto w-16 h-16"
+            >
+            <p class="text-2xl font-bold text-gray-800 mb-1">
+                ${Math.round(day.main.temp)}°C
+            </p>
+            <p class="text-gray-600 capitalize">
+                ${day.weather[0].description}
+            </p>
         `;
         
         forecastContainer.appendChild(forecastItem);
