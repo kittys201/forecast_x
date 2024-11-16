@@ -60,5 +60,5 @@ app.get('/weather', async (req, res) => {
 app.use(errorHandler);
 
 app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
+    console.log(`Server running at https://forecast-x.onrender.com/t:${port}`);
 });
