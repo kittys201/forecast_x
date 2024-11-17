@@ -9,7 +9,7 @@ async function getWeather() {
     }
 
     try {
-        const response = await fetch(`http://localhost:3000/weather?city=${encodeURIComponent(city)}`);
+        const response = await fetch(`https://forecast-x.onrender.com/weather?city=${encodeURIComponent(city)}`);
         const data = await response.json();
 
         if (!response.ok) {
