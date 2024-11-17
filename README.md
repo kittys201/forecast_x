@@ -4,7 +4,7 @@ A modern and responsive weather forecast application that provides real-time wea
 
 [Live Demo](https://forecast-x.onrender.com)  
 [GitHub Repository](https://github.com/kittys201/forecast_x)
-[Video demo](https://youtube.com)
+[Video demo](https://youtu.be/BL9xWQ4KKM0)
 
 The application provides essential weather metrics including:
 - Current temperature
